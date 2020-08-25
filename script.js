@@ -9,3 +9,19 @@ if(johnScore >= lowerLimit) {
 } else {
   console.log("Both students failed the exam")
 }
+
+// loops
+// let arr = ["John", "Mary", "Jo", "Nick"]
+// for(var i = 0; i < arr.length; i++) {
+//   console.log(arr[i]);
+// }
+
+//break
+let arr = ["John", "Mary", "Bob", "Jo", "Nick"]
+for(var i = 0; i < arr.length; i++) {
+  if(arr[i] === "Bob") {
+    console.log(arr[i] + " is my brother");
+    break
+  }
+  console.log(arr[i]);
+}
