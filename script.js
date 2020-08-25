@@ -27,9 +27,17 @@ for(var i = 0; i < arr.length; i++) {
 }
 
 //while loop
+// let colors = ["blue", "green", "yellow", "pink"]
+// var i = 0;
+// while(i < colors.length) {
+//   console.log(colors[i]);
+//   i++
+// }
+
+//do while loop
 let colors = ["blue", "green", "yellow", "pink"]
 var i = 0;
-while(i < colors.length) {
+do {
   console.log(colors[i]);
-  i++
-}
+  i++;
+} while(i < colors.length);
