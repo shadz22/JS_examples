@@ -15,7 +15,7 @@
 // console.log(ulElement.textContent = heading);
 
 
-
+/*
 var el = document.querySelector('ul');
 console.log(el);
 console.log(el.textContent = 'Hello World');
@@ -30,3 +30,21 @@ var el = document.querySelector('ul li:nth-child(2)');
 console.log(el);
 
 console.log(el.querySelector('p .fa-times'));
+*/
+
+var icons = document.getElementsByClassName('fa');
+console.log(icons);
+console.log(icons[0]);
+console.log(icons[1]);
+
+for(var i = 0; i < icons.length; i++) {
+    console.log(icons[i]);
+}
+
+// icons.push('Hello');
+ var iconsArr = Array.from(icons);
+ console.log(iconsArr);
+ console.log(icons);
+
+iconsArr.push("Hello");
+console.log(iconsArr);
