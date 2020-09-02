@@ -32,19 +32,26 @@ console.log(el);
 console.log(el.querySelector('p .fa-times'));
 */
 
-var icons = document.getElementsByClassName('fa');
-console.log(icons);
-console.log(icons[0]);
-console.log(icons[1]);
+// var icons = document.getElementsByClassName('fa');
+// console.log(icons);
+// console.log(icons[0]);
+// console.log(icons[1]);
 
-for(var i = 0; i < icons.length; i++) {
-    console.log(icons[i]);
-}
+// for(var i = 0; i < icons.length; i++) {
+//     console.log(icons[i]);
+// }
 
-// icons.push('Hello');
- var iconsArr = Array.from(icons);
- console.log(iconsArr);
- console.log(icons);
+// // icons.push('Hello');
+//  var iconsArr = Array.from(icons);
+//  console.log(iconsArr);
+//  console.log(icons);
 
-iconsArr.push("Hello");
-console.log(iconsArr);
+// iconsArr.push("Hello");
+// console.log(iconsArr);
+
+
+//getElementsByClassName
+var icons = document.getElementsByClassName('fa'); //returns a html collection
+Array.from(icons).forEach(function(icon, index, arr) { // Array.from() will turn the Html collection into an array
+  console.log(icon, index, arr);
+});
