@@ -50,8 +50,14 @@ console.log(el.querySelector('p .fa-times'));
 // console.log(iconsArr);
 
 
-//getElementsByClassName
-var icons = document.getElementsByClassName('fa'); //returns a html collection
-Array.from(icons).forEach(function(icon, index, arr) { // Array.from() will turn the Html collection into an array
-  console.log(icon, index, arr);
+// //getElementsByClassName
+// var icons = document.getElementsByClassName('fa'); //returns a html collection
+// Array.from(icons).forEach(function(icon, index, arr) { // Array.from() will turn the Html collection into an array
+//   console.log(icon, index, arr);
+// });
+
+//querySelectorAll
+var lis = document.querySelectorAll('li, h2, #hide-list');
+Array.from(lis).forEach(function(li) {
+  li.textContent = "Hello world";
 });
