@@ -56,8 +56,23 @@ console.log(el.querySelector('p .fa-times'));
 //   console.log(icon, index, arr);
 // });
 
-//querySelectorAll
-var lis = document.querySelectorAll('li, h2, #hide-list');
-Array.from(lis).forEach(function(li) {
-  li.textContent = "Hello world";
-});
+// //querySelectorAll
+// var lis = document.querySelectorAll('li, h2, #hide-list');
+// Array.from(lis).forEach(function(li) {
+//   li.textContent = "Hello world";
+// });
+
+//style
+var h2 = document.querySelector('header h2');
+h2.style.color = "red";
+h2.style.backgroundColor = "yellow";
+
+var lis = document.querySelectorAll('ul li');
+lis[1].style.backgroundColor = "blue";
+
+for(var i = 0; i < lis.length; i++) {
+  lis[i].style.color = "green"
+}
+
+//using cssText
+lis[0].style.cssText = "background-color: pink; font-size: 25px;"
