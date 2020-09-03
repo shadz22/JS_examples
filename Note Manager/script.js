@@ -77,12 +77,25 @@ console.log(el.querySelector('p .fa-times'));
 // //using cssText
 // lis[0].style.cssText = "background-color: pink; font-size: 25px;"
 
-// Events
-var h2 = document.querySelector('header h2');
-h2.onclick = function() {
-  console.log("Clicked");
-}
+// // Events
+// var h2 = document.querySelector('header h2');
+// h2.onclick = function() {
+//   console.log("Clicked");
+// }
 
-h2.onmouseover = function() {
-  console.log("hovering");
+// h2.onmouseover = function() {
+//   console.log("hovering");
+// }
+
+//addEventListner
+var h2 = document.querySelector('header h2');
+h2.addEventListener('click', function() {
+  console.log('clicked');
+})
+
+//another way of doing the above is to create the function outside of the eventListener
+h2.addEventListener('click', a);
+
+function a() {
+  console.log('clicked');
 }
