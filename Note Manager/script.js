@@ -87,15 +87,24 @@ console.log(el.querySelector('p .fa-times'));
 //   console.log("hovering");
 // }
 
-//addEventListner
-var h2 = document.querySelector('header h2');
-h2.addEventListener('click', function() {
-  console.log('clicked');
-})
+// //addEventListner
+// var h2 = document.querySelector('header h2');
+// h2.addEventListener('click', function() {
+//   console.log('clicked');
+// })
 
-//another way of doing the above is to create the function outside of the eventListener
-h2.addEventListener('click', a);
+// //another way of doing the above is to create the function outside of the eventListener
+// h2.addEventListener('click', a);
 
-function a() {
-  console.log('clicked');
-}
+// function a() {
+//   console.log('clicked');
+// }
+
+
+//Attributes
+var div = document.querySelector('div.wrapper');
+
+div.getAttribute('class'); // will retirn 'wrapper' as it's the name of the class
+div.setAttribute('style', 'background: yellow'); //will create a new attribute fo rthe div element called 'style' witht the value of 'background: yellow'
+div.removeAttribute('style'); //removes the attribute
+div.hasAttribute('style'); //checks if it has it and returns a boolean value
