@@ -101,10 +101,20 @@ console.log(el.querySelector('p .fa-times'));
 // }
 
 
-//Attributes
-var div = document.querySelector('div.wrapper');
+// //Attributes
+// var div = document.querySelector('div.wrapper');
 
-div.getAttribute('class'); // will retirn 'wrapper' as it's the name of the class
-div.setAttribute('style', 'background: yellow'); //will create a new attribute fo rthe div element called 'style' witht the value of 'background: yellow'
-div.removeAttribute('style'); //removes the attribute
-div.hasAttribute('style'); //checks if it has it and returns a boolean value
+// div.getAttribute('class'); // will retirn 'wrapper' as it's the name of the class
+// div.setAttribute('style', 'background: yellow'); //will create a new attribute fo rthe div element called 'style' witht the value of 'background: yellow'
+// div.removeAttribute('style'); //removes the attribute
+// div.hasAttribute('style'); //checks if it has it and returns a boolean value
+
+//change the button
+var btn = document.getElementById('add-btn');
+var input = document.getElementById('add-input');
+
+btn.addEventListener('click', function(e) {
+  e.preventDefault();
+  input.setAttribute('type', 'submit');
+  input.setAttribute('value', input.value);
+})
