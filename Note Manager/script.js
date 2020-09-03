@@ -62,17 +62,27 @@ console.log(el.querySelector('p .fa-times'));
 //   li.textContent = "Hello world";
 // });
 
-//style
+// //style
+// var h2 = document.querySelector('header h2');
+// h2.style.color = "red";
+// h2.style.backgroundColor = "yellow";
+
+// var lis = document.querySelectorAll('ul li');
+// lis[1].style.backgroundColor = "blue";
+
+// for(var i = 0; i < lis.length; i++) {
+//   lis[i].style.color = "green"
+// }
+
+// //using cssText
+// lis[0].style.cssText = "background-color: pink; font-size: 25px;"
+
+// Events
 var h2 = document.querySelector('header h2');
-h2.style.color = "red";
-h2.style.backgroundColor = "yellow";
-
-var lis = document.querySelectorAll('ul li');
-lis[1].style.backgroundColor = "blue";
-
-for(var i = 0; i < lis.length; i++) {
-  lis[i].style.color = "green"
+h2.onclick = function() {
+  console.log("Clicked");
 }
 
-//using cssText
-lis[0].style.cssText = "background-color: pink; font-size: 25px;"
+h2.onmouseover = function() {
+  console.log("hovering");
+}
