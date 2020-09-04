@@ -109,12 +109,28 @@ console.log(el.querySelector('p .fa-times'));
 // div.removeAttribute('style'); //removes the attribute
 // div.hasAttribute('style'); //checks if it has it and returns a boolean value
 
-//change the button
-var btn = document.getElementById('add-btn');
-var input = document.getElementById('add-input');
+// //change the button
+// var btn = document.getElementById('add-btn');
+// var input = document.getElementById('add-input');
 
-btn.addEventListener('click', function(e) {
-  e.preventDefault();
-  input.setAttribute('type', 'submit');
-  input.setAttribute('value', input.value);
-})
+// btn.addEventListener('click', function(e) {
+//   e.preventDefault();
+//   input.setAttribute('type', 'submit');
+//   input.setAttribute('value', input.value);
+// })
+
+//Create new element
+var newEl = document.createElement('button');
+var text = document.createTextNode('Click')
+
+newEl.appendChild(text);
+newEl.setAttribute('style', 'display: block; margin: 10px auto; padding 5px 10px; background: coral;');
+
+var form = document.getElementById('add');
+form.appendChild(newEl); //this will add the new element as the last child of the form
+
+form.insertBefore(newEl, form.children[0]); //this will add the new element as the first child of the form
+
+newEl.parentElement.removeChild(newEl); //to remove an element
+
+
