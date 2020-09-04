@@ -119,18 +119,53 @@ console.log(el.querySelector('p .fa-times'));
 //   input.setAttribute('value', input.value);
 // })
 
-//Create new element
-var newEl = document.createElement('button');
-var text = document.createTextNode('Click')
+// //Create new element
+// var newEl = document.createElement('button');
+// var text = document.createTextNode('Click')
 
-newEl.appendChild(text);
-newEl.setAttribute('style', 'display: block; margin: 10px auto; padding 5px 10px; background: coral;');
+// newEl.appendChild(text);
+// newEl.setAttribute('style', 'display: block; margin: 10px auto; padding 5px 10px; background: coral;');
 
-var form = document.getElementById('add');
-form.appendChild(newEl); //this will add the new element as the last child of the form
+// var form = document.getElementById('add');
+// form.appendChild(newEl); //this will add the new element as the last child of the form
 
-form.insertBefore(newEl, form.children[0]); //this will add the new element as the first child of the form
+// form.insertBefore(newEl, form.children[0]); //this will add the new element as the first child of the form
 
-newEl.parentElement.removeChild(newEl); //to remove an element
+// newEl.parentElement.removeChild(newEl); //to remove an element
 
 
+//Task 3
+var ul = document.querySelector('ul');
+var btn = document.getElementById('add-btn');
+
+btn.addEventListener('click', function (e) {
+  e.preventDefault();
+
+  var addInput = document.getElementById('add-input');
+  if( addInput.value !== '') { 
+  var li = document.createElement('li'), 
+      firstPar = document.createElement('p'), 
+      secondPar = document.createElement('p'), 
+      firstIcon = document.createElement('i'), 
+      secondIcon = document.createElement('i'),
+      input = document.createElement('input');
+
+      firstIcon.className = "fa fa-pencil-square-o";
+      secondIcon.className = "fa fa-times";
+      input.className = "edit-note";
+      input.setAttribute('type', 'text');
+
+      firstPar.textContent = addInput.value;
+
+      secondPar.appendChild(firstIcon);
+      secondPar.appendChild(secondIcon);
+
+      li.appendChild(firstPar);
+      li.appendChild(secondPar);
+      li.appendChild(input);
+
+      ul.appendChild(li);
+
+      addInput.value = '';
+  }
+})
