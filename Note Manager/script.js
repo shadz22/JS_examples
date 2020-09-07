@@ -135,9 +135,11 @@ console.log(el.querySelector('p .fa-times'));
 
 
 //Task 3
+
 var ul = document.querySelector('ul');
 var btn = document.getElementById('add-btn');
 
+//********** Add notes
 btn.addEventListener('click', function (e) {
   e.preventDefault();
 
@@ -169,3 +171,29 @@ btn.addEventListener('click', function (e) {
       addInput.value = '';
   }
 })
+
+// **************** Edit note
+ul.addEventListener('click', function(e) {
+
+  if(e.target.classList[1] === "fa-pencil-square-o") {
+
+    var parentPar = e.target.parentNode;
+    // console.log(parentPar);
+    parentPar.style.display = 'none';
+
+    var note = parentPar.previousElementSibling;
+    var input = parentPar.nextElementSibling;
+
+    input.style.display = 'block';
+    input.value = note.textContent;
+
+    input.addEventListener('keypress', function(e) {
+      if(e.keyCode === 13) {
+        note.textContent = input.value;
+        input.style.display = 'none';
+        parentPar.style.display = 'block';
+      }
+    })
+    
+  }
+});
