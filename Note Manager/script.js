@@ -217,4 +217,23 @@ hideItem.addEventListener('click', function() {
     label.textContent = "Hide Notes";
     ul.style.display = 'block';
   }
+});
+
+//*********** Search Filter
+var searchNote = document.querySelector('#search-note input');
+
+searchNote.addEventListener('keyup', function(e) {
+  var searchChar = e.target.value.toUpperCase();
+  var notes = ul.getElementsByTagName('li');
+
+  Array.from(notes).forEach(function(note) {
+    var paragraphText = note.firstElementChild.textContent;
+
+    if(paragraphText.toUpperCase().indexOf(searchChar) !== -1) {
+      note.style.display = 'block';
+    } else {
+      note.style.display = 'none';
+    }
+  })
+
 })
