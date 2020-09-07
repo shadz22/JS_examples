@@ -172,7 +172,7 @@ btn.addEventListener('click', function (e) {
   }
 })
 
-// **************** Edit note
+// **************** Edit and Delete note
 ul.addEventListener('click', function(e) {
 
   if(e.target.classList[1] === "fa-pencil-square-o") {
@@ -189,11 +189,18 @@ ul.addEventListener('click', function(e) {
 
     input.addEventListener('keypress', function(e) {
       if(e.keyCode === 13) {
-        note.textContent = input.value;
-        input.style.display = 'none';
-        parentPar.style.display = 'block';
+        if(input.value !== '') {
+          note.textContent = input.value;
+          input.style.display = 'none';
+          parentPar.style.display = 'block';
+        } else {
+          var li = input.parentNode;
+          li.parentNode.removeChild(li);
+        }
       }
     })
-    
+  } else if(e.target.classList[1] === "fa-times") {
+    var list = e.target.parentNode.parentNode;
+    list.parentNode.removeChild(list);
   }
 });
