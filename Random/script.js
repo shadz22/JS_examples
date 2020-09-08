@@ -117,27 +117,67 @@
 // per1.getFullName();
 
 
-// Everything is an object
-var arr = [1, 2, 3];
-arr[3] = 4;
+// // Everything is an object
+// var arr = [1, 2, 3];
+// arr[3] = 4;
 
-arr.prop = 'Hello';
+// arr.prop = 'Hello';
 
-console.log(arr);
-console.log(arr.prop);
+// console.log(arr);
+// console.log(arr.prop);
 
-function a() {
-  console.log('Hello');
+// function a() {
+//   console.log('Hello');
+// }
+
+// a['prop'] = 'Hi';
+
+// a.obj = {
+//   greet: 'Hey'
+// };
+
+// a.myFunc = function() {
+//   console.log('Hola');
+// }
+
+// console.log(window);
+
+
+
+//Function Constructor
+var person1 = {};
+person1.firstname = 'John';
+person1.lastname = 'Smith';
+
+var person2 = {};
+person2.firstname = 'Nick';
+person2.lastname = 'Doe';
+
+function createPerson(firstname, lastname) {
+  var newPerson = {};
+  newPerson.firstname = firstname;
+  newPerson.lastname = lastname;
+  return newPerson;
 }
 
-a['prop'] = 'Hi';
-
-a.obj = {
-  greet: 'Hey'
-};
-
-a.myFunc = function() {
-  console.log('Hola');
+function Person(firstname, lastname) {
+  
+  this.firstname = firstname;
+  this.lastname = lastname;
+  
 }
 
-console.log(window);
+var person3 = new Person('Bob', 'Brown');
+var person4 = new Person('Mary', 'James');
+
+// console.log(this);
+console.log(person1);
+console.log(person2);
+console.log(person3);
+console.log(person4);
+
+var strObj = new String('Hello');
+console.log(strObj);
+console.log(typeof strObj);
+
+
