@@ -71,47 +71,73 @@
 
  //this
 
+// function a() {
+//   console.log(this);
+//   console.log(this === window);
+
+//   function b() {
+//     console.log(this);
+//     console.log(this === window);
+//   }
+
+//   b();
+
+// }
+
+// a();
+
+
+// var firstname = 'Bob';
+
+// var per = {
+//   firstname: 'John',
+//   lastname: 'Smith',
+//   getFullName: function() {
+//     var that = this;
+//     // console.log(this === per);
+//     // return per.firstname + ' ' + per.lastname;
+//     // return this.firstname + ' ' + this.lastname;
+//     console.log(this.firstname + ' ' + this.lastname);
+
+//     function greet() {
+//       console.log('Hi ' + that.firstname);
+//     }
+//     greet();
+//   }
+// };
+
+// var per1 = {
+//   firstname: 'Nick',
+//   lastname: 'Doe'
+// };
+
+// per1.getFullName = per.getFullName;
+
+// per.getFullName();
+// per1.getFullName();
+
+
+// Everything is an object
+var arr = [1, 2, 3];
+arr[3] = 4;
+
+arr.prop = 'Hello';
+
+console.log(arr);
+console.log(arr.prop);
+
 function a() {
-  console.log(this);
-  console.log(this === window);
-
-  function b() {
-    console.log(this);
-    console.log(this === window);
-  }
-
-  b();
-
+  console.log('Hello');
 }
 
-a();
+a['prop'] = 'Hi';
 
-
-var firstname = 'Bob';
-
-var per = {
-  firstname: 'John',
-  lastname: 'Smith',
-  getFullName: function() {
-    var that = this;
-    // console.log(this === per);
-    // return per.firstname + ' ' + per.lastname;
-    // return this.firstname + ' ' + this.lastname;
-    console.log(this.firstname + ' ' + this.lastname);
-
-    function greet() {
-      console.log('Hi ' + that.firstname);
-    }
-    greet();
-  }
+a.obj = {
+  greet: 'Hey'
 };
 
-var per1 = {
-  firstname: 'Nick',
-  lastname: 'Doe'
-};
+a.myFunc = function() {
+  console.log('Hola');
+}
 
-per1.getFullName = per.getFullName;
-
-per.getFullName();
-per1.getFullName();
+console.log(window);
