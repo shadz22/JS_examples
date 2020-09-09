@@ -182,19 +182,21 @@
 
 
 // //Prototype - Object Function
-// var a = {};
-// var b = new Object();
+/*
+var a = {};
+var b = new Object();
 
-// console.log(a);
-// console.log(b);
-// console.log(Object);
-// console.log(Object.prototype);
+console.log(a);
+console.log(b);
+console.log(Object);
+console.log(Object.prototype);
 
-// Object.prototype.greet = 'Hello';
-// console.log(Object.prototype);
-
+Object.prototype.greet = 'Hello';
+console.log(Object.prototype);
+*/
 
 // Function Constructors And Prototypes
+/*
 function a() {}
 
 console.log(a.prototype);
@@ -224,8 +226,52 @@ var person2 = new Person('Nick', 'Doe');
 console.log(person1.getFullName());
 console.log(person2.getFullName());
 console.log(person1.greet);
+*/
 
+// Object.create()
+function Person() {
+  this.name = "John";
+}
 
+Person.prototype.greet = "Hello";
+
+var person1 = new Person();
+var person2 = Object.create(Person.prototype);
+
+console.log(person1);
+console.log(person2);
+
+var firstProto = {
+  sayHello: function() {
+    return "Hello " + this.name;
+  }
+}
+
+var john = Object.create(firstProto, {
+  name: {
+    value: "John"
+  }
+})
+console.log(john);
+
+var secondProto = Object.create(firstProto, {
+  sayHi: {
+    value: function() {
+      return "Hi " + this.name;
+    }
+  }
+})
+console.log(secondProto);
+
+var bob = Object.create(secondProto, {
+  name: {
+    value: "Bob"
+  }
+})
+console.log(bob);
+
+var obj = Object.create(null);
+console.log(obj);
 
 
 
