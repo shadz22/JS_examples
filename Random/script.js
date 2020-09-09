@@ -144,40 +144,51 @@
 
 
 
-//Function Constructor
-var person1 = {};
-person1.firstname = 'John';
-person1.lastname = 'Smith';
+// //Function Constructor
+// var person1 = {};
+// person1.firstname = 'John';
+// person1.lastname = 'Smith';
 
-var person2 = {};
-person2.firstname = 'Nick';
-person2.lastname = 'Doe';
+// var person2 = {};
+// person2.firstname = 'Nick';
+// person2.lastname = 'Doe';
 
-function createPerson(firstname, lastname) {
-  var newPerson = {};
-  newPerson.firstname = firstname;
-  newPerson.lastname = lastname;
-  return newPerson;
-}
+// function createPerson(firstname, lastname) {
+//   var newPerson = {};
+//   newPerson.firstname = firstname;
+//   newPerson.lastname = lastname;
+//   return newPerson;
+// }
 
-function Person(firstname, lastname) {
+// function Person(firstname, lastname) {
   
-  this.firstname = firstname;
-  this.lastname = lastname;
+//   this.firstname = firstname;
+//   this.lastname = lastname;
   
-}
+// }
 
-var person3 = new Person('Bob', 'Brown');
-var person4 = new Person('Mary', 'James');
+// var person3 = new Person('Bob', 'Brown');
+// var person4 = new Person('Mary', 'James');
 
-// console.log(this);
-console.log(person1);
-console.log(person2);
-console.log(person3);
-console.log(person4);
+// // console.log(this);
+// console.log(person1);
+// console.log(person2);
+// console.log(person3);
+// console.log(person4);
 
-var strObj = new String('Hello');
-console.log(strObj);
-console.log(typeof strObj);
+// var strObj = new String('Hello');
+// console.log(strObj);
+// console.log(typeof strObj);
 
 
+//Prototype - Object Function
+var a = {};
+var b = new Object();
+
+console.log(a);
+console.log(b);
+console.log(Object);
+console.log(Object.prototype);
+
+Object.prototype.greet = 'Hello';
+console.log(Object.prototype);
